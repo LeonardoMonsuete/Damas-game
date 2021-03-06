@@ -1,3 +1,7 @@
 function splitCoords(coord){
-    return coord.split('')
+    let coordsArray = coord.split('')
+    return {
+        row: coordsArray[0],
+        column: coordsArray[1]
+    }
 }

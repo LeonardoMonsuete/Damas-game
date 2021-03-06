@@ -19,11 +19,25 @@
 // 		x = x +130;
 // 	}
 // }
+	var selecionada = 0;
+	var idCasaPeca = ''
+	var idCasaAspirada = ''
+	var clicks = 0
+	let casas = document.querySelectorAll('td')
 
+	casas.forEach(casa => casa.addEventListener('click', () =>{
+		 	if(clicks == 1){
+				idCasaAspirada = casa.id
+				move(idCasaPeca,idCasaAspirada)
+				clicks = 0
+			 }
+	}))
 
 	$(document).on('click','.azuis',function(){
 		var $this = $(this);
 		$('.azuis').removeClass('azul_selecionada');
+		idCasaPeca = this.parentNode.id
+		clicks ++;
 		$this.addClass('azul_selecionada');
 	  });
 	  
@@ -33,6 +47,8 @@
 
 	  $(document).on('click','.vermelhas',function(){
 		var $this = $(this);
+		idCasaPeca = this.parentNode.id
+		clicks ++;
 		$('.vermelhas').removeClass('vermelha_selecionada');
 		$this.addClass('vermelha_selecionada');
 	  });
@@ -42,11 +58,16 @@
 	  });
 
 
+
 function move(idAtual,idMovimento){
 	let coordsAtual = splitCoords(idAtual);
 	let coordsMovimento = splitCoords(idMovimento);
-
+	
+	console.log(coordsMovimento)
+	console.log(coordsAtual)
 	if(validateMoviment(coordsMovimento)){
 		console.log("é um movimento valido !!")
+	}else{
+		console.log("não é um movimento valido !")
 	}
 }

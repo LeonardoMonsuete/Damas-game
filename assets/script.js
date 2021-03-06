@@ -1,3 +1,4 @@
+
 // var tabuleiro = document.getElementById("tabuleiro");
 // var campo = tabuleiro.getContext("2d");
 // var x = 0;
@@ -40,3 +41,12 @@
 		$('.vermelhas').removeClass('vermelha_selecionada');
 	  });
 
+
+function move(idAtual,idMovimento){
+	let coordsAtual = splitCoords(idAtual);
+	let coordsMovimento = splitCoords(idMovimento);
+
+	if(validateMoviment(coordsMovimento)){
+		console.log("é um movimento valido !!")
+	}
+}

@@ -49,3 +49,13 @@ td {
 .dama-vermelha {
     background-color: rgb(255, 0, 212);
 }
+
+.azul_selecionada {
+    background-color: rgb(0, 255, 72);
+    border: 1px solid rgb(0, 255, 72);
+}
+
+.vermelha_selecionada {
+    background-color: rgb(242, 210, 107);
+    border: 1px solid rgb(242, 210, 107);
+}

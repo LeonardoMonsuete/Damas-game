@@ -1,8 +1,51 @@
-canvas {
-	border: 1px solid #000000;
-	background-color: white;
+body {
+	text-align:center;
+	background-image: url('images/main-bg.jpg');
+	background-repeat: no-repeat;
+	background-size: 100%;
 }
 
 h2 {
 	color: white;
+}
+
+* {
+    margin: auto;
+}
+
+.inacessivel {
+    background-color:white;
+}
+
+td {
+    text-align: center;
+    background-color: black;
+    width: 65px;
+    height: 65px;
+}
+
+.azuis {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: blue;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.vermelhas {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    background-color: red;
+    border: 1px solid white;
+    border-radius: 50px;
+}
+
+.dama-azul {
+    background-color: rgb(37, 212, 225);
+}
+
+.dama-vermelha {
+    background-color: rgb(255, 0, 212);
 }

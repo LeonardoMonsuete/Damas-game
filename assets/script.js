@@ -23,6 +23,7 @@
 	var idCasaPeca = ''
 	var idCasaAspirada = ''
 	var clicks = 0
+	var idPeca = ''
 	let casas = document.querySelectorAll('td')
 
 	casas.forEach(casa => casa.addEventListener('click', () =>{
@@ -33,10 +34,16 @@
 			 }
 	}))
 
+	casas.forEach(casa => casa.addEventListener('mouseenter', () =>{
+		document.getElementById('show-td-id').innerText = casa.id;
+	}))
+
 	$(document).on('click','.azuis',function(){
 		var $this = $(this);
 		$('.azuis').removeClass('azul_selecionada');
 		idCasaPeca = this.parentNode.id
+		idPeca = this.id;
+		
 		clicks ++;
 		$this.addClass('azul_selecionada');
 	  });
@@ -47,7 +54,13 @@
 
 	  $(document).on('click','.vermelhas',function(){
 		var $this = $(this);
-		idCasaPeca = this.parentNode.id
+		idCasaPeca = this.parentNode.id;
+		var validMoveOne = parseInt(idCasaPeca) - 11;
+		var validMoveOTwo = parseInt(idCasaPeca) - 9;
+		// document.getElementById(validMoveOne).style.backgroundColor = 'green';
+		// document.getElementById(validMoveOTwo).style.backgroundColor = 'green';
+	
+		idPeca = this.id;
 		clicks ++;
 		$('.vermelhas').removeClass('vermelha_selecionada');
 		$this.addClass('vermelha_selecionada');
@@ -55,6 +68,8 @@
 	  
 	  $('body').click(function() {
 		$('.vermelhas').removeClass('vermelha_selecionada');
+		// document.getElementById(validMoveOne).style.backgroundColor = 'black';
+		// document.getElementById(validMoveOTwo).style.backgroundColor = 'black';
 	  });
 
 
@@ -63,11 +78,14 @@ function move(idAtual,idMovimento){
 	let coordsAtual = splitCoords(idAtual);
 	let coordsMovimento = splitCoords(idMovimento);
 	
-	console.log(coordsMovimento)
-	console.log(coordsAtual)
+	console.log(idAtual)
+	console.log(idMovimento)
+	console.log(idPeca)
 	if(validateMoviment(coordsMovimento)){
 		console.log("é um movimento valido !!")
+		document.getElementById(idMovimento).appendChild(document.getElementById(idPeca))
 	}else{
 		console.log("não é um movimento valido !")
+		alert("Não é um movimento valido")
 	}
 }

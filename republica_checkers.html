@@ -6,11 +6,22 @@
 
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	
 
+<link rel="sortcut icon" href="assets/images/icone.png" type="image/x-icon" />
 </head>
 <body>
+
+	<div class="container">
 	<h2>Jogo de dama - Republica Checkers</h2>
+	
+	<div id="div-player-01">
+		<span>Jogador 01</span>
+	</div>
+
+	<div id="div-tabuleiro">
 	<table>
+		<p id="show-td-id"></p>
 		<tr id="row-1">
 			<td id="11" class="inacessivel"></td>
 			<td id="12" class="acessivel"><p id="azul01" class="azuis"></p></td>
@@ -44,7 +55,7 @@
 		</tr>
 		<tr id="row-4">
 			<td id="41" class="acessivel"></td>
-			<td id="41" class="inacessivel"></td>
+			<td id="42" class="inacessivel"></td>
 			<td id="43" class="acessivel"></td>
 			<td id="44" class="inacessivel"></td>
 			<td id="45" class="acessivel"></td>
@@ -92,8 +103,13 @@
 			<td id="87" class="acessivel"><p id="vermelha04" class="vermelhas"></p></td>
 			<td id="88" class="inacessivel"></td>
 	</table>
+</div>
+
+	<div id="div-player-02" >
+		Jogador 02
+	</div>
 		 	
-	</canvas>
+</div>
 	<script type="text/javascript" src="assets/util.js"></script>
 	<script type="text/javascript" src="assets/validacoes.js"></script>
 	<script type="text/javascript" src="assets/script.js"></script>

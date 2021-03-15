@@ -215,3 +215,7 @@ function move(idAtual,idMovimento){
 		alert("Não é um movimento valido")
 	}
 }
+
+function initGame(){
+	return JSON.stringify(tabuleiro)
+}

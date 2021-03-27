@@ -203,11 +203,19 @@
 function move(idAtual,idMovimento){
 	let coordsAtual = splitCoords(idAtual);
 	let coordsMovimento = splitCoords(idMovimento);
+	let corPeca;
 	
 	console.log(idAtual)
 	console.log(idMovimento)
 	console.log(idPeca)
-	if(validateMoviment(coordsMovimento)){
+
+	if(String(idPeca).startsWith("azul",0)){
+		console.log("ok")
+		corPeca = 1;
+	}else{
+		corPeca = 2;
+	}
+	if(validateMoviment(coordsMovimento, coordsAtual, corPeca)){
 		console.log("é um movimento valido !!")
 		document.getElementById(idMovimento).appendChild(document.getElementById(idPeca))
 	}else{

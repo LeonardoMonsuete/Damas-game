@@ -217,6 +217,8 @@ function move(idAtual,idMovimento){
 	}
 	if(validateMoviment(coordsMovimento, coordsAtual, corPeca)){
 		console.log("é um movimento valido !!")
+		console.log("ID DA PECA: " + idPeca)
+		console.log(document.getElementById(idPeca))
 		document.getElementById(idMovimento).appendChild(document.getElementById(idPeca))
 	}else{
 		console.log("não é um movimento valido !")
